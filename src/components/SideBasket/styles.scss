@@ -1,0 +1,115 @@
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+
+  .drawer {
+    position: absolute;
+    width: 420px;
+    right: 0;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .items {
+      overflow: auto;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .closeBtn {
+      cursor: pointer;
+    }
+  }
+
+  .basketTotalBlock {
+    ul {
+      display: block;
+      margin-bottom: 40px !important;
+
+      li {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 20px;
+
+        div {
+          flex: 1;
+          border-bottom: 1px dashed #DFDFDF;
+          height: 1px;
+          position: relative;
+          top: -4px;
+          margin: 0 7px;
+        }
+      }
+    }
+
+  }
+
+  .greenButton {
+    width: 100%;
+    height: 55px;
+    background: #9DD558;
+    border-radius: 18px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .15s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background: lighten(#9DD558, 10%);
+    }
+
+    &:active {
+      background: darken(#9DD558, 10%);
+    }
+  }
+}
+
+
+.basketItem {
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .basketItemImg {
+    width: 75px;
+    height: 75px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 10px;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  .removeBtn {
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .15s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
