@@ -30,13 +30,15 @@ export const Header = () => {
           <p className='opacity-5'>Sneakers shop</p>
         </div>
       </div>
-      <ul className=' d-flex'>
-        <li className='mr-30 d-flex justify-around'>
-          <img className='viewSideImage' src={basket} onClick={viewSide}/>
-          <p>1200 AZN</p>
+      <ul className='d-flex'>
+        <li className=' mr-30 d-flex justify-around cu-p' onClick={viewSide}>
+          <img className='viewSideImage' src={basket}/>
+          <p className='price'>1200 AZN</p>
+        </li>
+        <li className='d-flex mr-5 '>
           <img src={favorites}/>
         </li>
-        <li>
+        <li className='d-flex ml-15'>
           <img src={user}/>
         </li>
       </ul>

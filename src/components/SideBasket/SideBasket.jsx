@@ -1,7 +1,8 @@
 import React from "react";
-import remove from "../../assets/images/buttonRemove.svg";
-
 import './styles.scss'
+
+import remove from "../../assets/images/buttonRemove.svg";
+import arrow from "../../assets/images/arrowRight.svg";
 
 
 const snikImg = 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/770a3993-e584-4a42-9711-be44fb648a0b/sb-zoom-blazer-mid-skate-shoes-qX3MZV.png'
@@ -60,7 +61,8 @@ export const SideBasket = ({ setIsSideBasket }) => {
               <b>17.5 AZN</b>
             </li>
           </ul>
-          <button className='greenButton'>Create order -></button>
+          <button className='greenButton'>Create order <img src={arrow}/>
+          </button>
         </div>
       </div>
     </div>

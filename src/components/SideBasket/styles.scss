@@ -53,6 +53,25 @@
       }
     }
 
+    .greenButton {
+      position: relative;
+
+      &:hover {
+        img {
+          transform: translateX(5px);
+        }
+      }
+
+      img {
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        transition: transform .2s ease-in-out;
+      }
+
+
+    }
+
   }
 
   .greenButton {
@@ -74,6 +93,8 @@
     &:active {
       background: darken(#9DD558, 10%);
     }
+
+
   }
 }
 

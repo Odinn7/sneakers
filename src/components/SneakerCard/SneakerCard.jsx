@@ -5,29 +5,35 @@ import addToBasket from "../../assets/images/addToBasket.svg";
 import './styles.scss';
 
 
-const snikImg = 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/770a3993-e584-4a42-9711-be44fb648a0b/sb-zoom-blazer-mid-skate-shoes-qX3MZV.png'
+const snikImg = 'https://freesvg.org/img/1517505968.png'
 
-export const SneakerCard = () => {
+export const SneakerCard = ({ sneaker }) => {
+  const { name, price, image } = sneaker;
+  console.log(sneaker, 'image')
+  
   return (
     <div className="card">
+      
       <div className='favorite'>
         <img src={addToFavorite} alt='addToFavorite'/>
       </div>
       <img
-        src={snikImg}
-        alt='nike'
+        // src={snikImg}
+        src={image}
+        alt='sneaker'
         width={130}
         height={130}
       />
-      <h5>Nike</h5>
+      <h5>{name}</h5>
       <div className='cardBottom d-flex justify-between align-center'>
         <div>
           <span>Price: </span>
-          <b>350 AZN</b>
+          <b>{price} RUB</b>
         </div>
         <img className='addToBasketImage' src={addToBasket}
              alt='addToBasket'/>
       </div>
     </div>
+  
   )
 }
