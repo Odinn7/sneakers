@@ -5,10 +5,13 @@ import remove from "../../assets/images/buttonRemove.svg";
 import arrow from "../../assets/images/arrowRight.svg";
 
 
-const snikImg = 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/770a3993-e584-4a42-9711-be44fb648a0b/sb-zoom-blazer-mid-skate-shoes-qX3MZV.png'
 const closeBtn = 'https://icon-library.com/images/svg-close-icon/svg-close-icon-4.jpg'
 
-export const SideBasket = ({ setIsSideBasket }) => {
+export const SideBasket = ({
+                             setIsSideBasket,
+                             removeSneakerHandler,
+                             addedSneakers = []
+                           }) => {
   
   const closeBtnHandler = () => {
     setIsSideBasket(false)
@@ -35,35 +38,56 @@ export const SideBasket = ({ setIsSideBasket }) => {
           </div>
         </div>
         
-        <div className="items flex">
-          <div className="basketItem d-flex align-center">
-            <div
-              style={{ backgroundImage: `url(${snikImg})` }}
-              className='basketItemImg'
-            />
-            <div className='mr-20 flex'>
-              <p className='mb-5'>Nike</p>
-              <b>350 AZN</b>
+        {
+          // addedSneakers.length > 0 ?
+          <>
+            <div className="items flex">
+              {addedSneakers.map(item =>
+                <div key={item.id} className="basketItem d-flex align-center">
+                  <div
+                    style={{ backgroundImage: `url(${item.image})` }}
+                    className='basketItemImg'
+                  />
+                  <div className='mr-20 flex'>
+                    <p className='mb-5'>{item.name}</p>
+                    <b>{item.price}</b>
+                  </div>
+                  <img onClick={id => removeSneakerHandler(item.id)}
+                       className='removeBtn'
+                       src={remove} alt='remove '/>
+                </div>
+              )}
+            
             </div>
-            <img className='removeBtn' src={remove} alt='remove '/>
-          </div>
-        </div>
-        <div className="basketTotalBlock">
-          <ul>
-            <li className='d-flex'>
-              <span>Total:</span>
-              <div></div>
-              <b>350 AZN</b>
-            </li>
-            <li className='d-flex'>
-              <span>Tax 5%: </span>
-              <div></div>
-              <b>17.5 AZN</b>
-            </li>
-          </ul>
-          <button className='greenButton'>Create order <img src={arrow}/>
-          </button>
-        </div>
+            <div className="basketTotalBlock">
+              <ul>
+                <li className='d-flex'>
+                  <span>Total:</span>
+                  <div></div>
+                  <b>350 AZN</b>
+                </li>
+                <li className='d-flex'>
+                  <span>Tax 5%: </span>
+                  <div></div>
+                  <b>17.5 AZN</b>
+                </li>
+              </ul>
+              <button className='greenButton'>
+                Create order <img alt="arrow" src={arrow}/>
+              </button>
+            </div>
+          </>
+          //                          :
+          // <div className='d-flex flex-column align-center'>
+          //   <img src={openBox} alt='box' width={80} height={80}/>
+          //   <b>No items in the basket :( </b>
+          //   <button onClick={closeBtnHandler} className='greenButton'>
+          //     <img alt='back' src={arrow}/> Back to
+          //     sneakers
+          //   </button>
+          // </div>
+        }
+      
       </div>
     </div>
   )

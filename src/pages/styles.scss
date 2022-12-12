@@ -1,0 +1,23 @@
+
+.greenButton {
+  width: 100%;
+  height: 55px;
+  background: #9DD558;
+  border-radius: 18px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  transition: .15s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: lighten(#9DD558, 10%);
+  }
+
+  &:active {
+    background: darken(#9DD558, 10%);
+  }
+
+
+}
